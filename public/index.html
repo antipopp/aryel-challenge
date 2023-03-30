@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/index.js" defer></script>
+  </head>
+  <body>
+    <h1>Memory Game</h1>
+    <nav>
+      <a href="/leaderboard">Leaderboard</a>
+    </nav>
+    <form id="start-form">
+      <label for="nickname">Enter your nickname:</label>
+      <input type="text" id="nickname" name="nickname" required>
+      <div id="button-group">
+        <button type="button" id="start-btn">Start</button>
+        <button type="button" id="end-btn">End</button>
+      </div>
+    </form>
+
+    <div id="error-box"></div>
+    <div id="success-box"></div>
+
+    <div id="game">
+      <div id="game-info">
+        <span id="timer">0.0</span>
+      </div>
+  </body>
+</html>

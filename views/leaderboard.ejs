@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/search.js" defer></script>
+  </head>
+  <body>
+    <h1>Leaderboard</h1>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+
+    <form id="search-form">
+      <label for="search-input">Search by nickname:</label>
+      <input type="text" id="search-input" />
+      <button type="button" id="search-btn">Search</button>
+    </form>
+
+    <div id="error-box"></div>
+
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Nickname</th>
+        <th>Time (s)</th>
+      </tr>
+      <% for (let i = 0; i < results.length; i++) { %> <% let rank = offset + i
+      + 1; %>
+      <tr>
+        <td><%= rank %></td>
+        <td><%= results[i].nickname %></td>
+        <td><%= results[i].time.toFixed(2) %></td>
+      </tr>
+      <% } %>
+    </table>
+    <div>
+      <% if (offset > 0) { %>
+      <a href="/leaderboard?page=<%= currentPage - 1 %>&limit=<%= limit %>"
+        >Prev</a
+      >
+      <% } %> <% if (results.length === limit) { %>
+      <a href="/leaderboard?page=<%= currentPage + 1 %>&limit=<%= limit %>"
+        >Next</a>
+      <% } %>
+    </div>
+  </body>
+</html>

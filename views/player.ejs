@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Player Search Results</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Player Search Results</h1>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+    <section>
+      <h2>Player Information</h2>
+      <p>Nickname: <%= player.nickname %></p>
+      <p>Time: <%= player.time.toFixed(2) %> seconds</p>
+      <p>Rank: <%= playerRank %></p>
+    </section>
+    <section>
+      <h2>Leaderboard</h2>
+      <table>
+        <tr>
+          <th>Rank</th>
+          <th>Nickname</th>
+          <th>Time (s)</th>
+        </tr>
+        <% for (let i = 0; i < leaderboard.length; i++) { %>
+        <tr class="<%= leaderboard[i].nickname === player.nickname ? 'highlight' : '' %>">
+          <td><%= startRank + i %></td>
+          <td><%= leaderboard[i].nickname %></td>
+          <td><%= leaderboard[i].time.toFixed(2) %></td>
+        </tr>
+        <% } %>
+      </table>
+    </section>
+  </body>
+</html>
