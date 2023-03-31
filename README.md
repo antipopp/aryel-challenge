@@ -1,21 +1,15 @@
 ## Utilizzo
 
-Impostare URL del server Mongo in `./app.ts` 
+Impostare URI del server Mongo creando un file .env o via bash
 
-```typescript
-mongoose.connect(
-  "mongodb://<tuo-server>"
-);
+```bash
+MONGODB_URI="MY_URI_HERE"
 ```
 
 ## Avvio
 
 ```bash
-yarn
-```
-
-```bash
-yarn start
+yarn && yarn start
 ```
 
 ## Endpoint

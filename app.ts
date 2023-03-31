@@ -1,3 +1,6 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import mongoose from "mongoose";
 import path from "path";
@@ -6,7 +9,7 @@ import { MemoryGameResult } from "./db/schema";
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://root:root@challenge.hrafmpb.mongodb.net/?retryWrites=true&w=majority"
+  process.env.MONGODB_URI || "mongodb://localhost:27017/memory-game",
 );
 
 const db = mongoose.connection;
